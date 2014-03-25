@@ -1,10 +1,9 @@
 source 'http://rubygems.org'
 
-gem 'middleman', '~>3.1.6'
-gem 'middleman-livereload', '~> 3.1.0'
+gem 'middleman', '~>3.2.2'
 
-gem 'sass'
-gem 'bourbon'
+gem 'sass', '~> 3.2.18'
+gem 'bourbon', '~> 3.1.8'
 
 gem 'coffee-script'
 

@@ -2,6 +2,34 @@
 title: Student Loans
 ---
 
+%h1.title How will student loans effect you?
+
+.costs
+  %h2 If you go to a typical four year private school, here's how much everything is gonna cost:
+  .years
+    - 4.times do |year|
+      .year
+        %span.title
+          Year
+          = year+1
+        %span.cost<
+          $
+          = 50000 + (year * 700)
+        .segments
+          .fees
+            %span Fees          
+          .room
+            %span Room &amp; board
+          .tuition
+            %span Tuition
+        
+  %h2 Total: $204200
+  %h2 Assuming half of this is covered in scholorships, grants, and your parent's money, there's a still $102100 left to pay.
+
+  %h2.loan-amount
+    Let's see how long it would take to pay back $102100
+
+  %h2 To pay this back in 10 years, you'll have to make monthly payments of $850
 .container
   .y-axis
   .chart

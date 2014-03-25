@@ -4,10 +4,104 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-.container {
-  margin: auto;
+@mixin container {
   position: relative;
   width: 1024px;
+  margin: 4rem auto;
+}
+
+.title {
+  font-size: 3rem;
+  margin: 4rem 0;
+  text-align: center;
+}
+
+.costs {
+  @include container;
+
+  h2 {
+    clear: both;
+    font-size: 2rem;
+    font-weight: 100;
+    margin: 2em auto;
+    text-align: center;
+    width: 70%;
+  }
+
+  .years {
+    overflow: auto;
+  }
+
+  .year {
+    background: rgba(0, 255, 0, .2);
+    border: .25rem solid green;
+    border-radius: .5rem;
+    box-sizing: border-box;
+    cursor: default;
+    float: left;
+    height: 250px;
+    margin: 0 2.5%;
+    padding: 2rem 1rem 1rem 1rem;
+    position: relative;
+    @include user-select(none);
+    width: 20%;
+
+    .title, .cost {
+      display: block;
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin: 1rem 0;
+      text-align: center;
+
+      &:first-child {
+        font-weight: normal;
+      }
+    }
+
+    .segments {
+      div {
+        background: transparent;
+        border-bottom: 1px dashed green;
+        @include position(absolute, 0px 0px 0 0px);
+        @include transition;
+
+        &:hover {
+          background: green;
+
+          span {
+            opacity: 1;
+          }
+        }
+      }
+
+      .fees {
+        height: 10%;
+      }
+
+      .room {
+        height: 35%;
+        top: 10%;
+      }
+
+      .tuition {
+        height: 55%;
+        top: 45%;
+      }
+
+      span {
+        color: white;
+        font-weight: bold;
+        opacity: 0;
+        @include position(absolute, 10% 10% 0 10%);
+        text-align: center;
+        @include transition;
+      }
+    }
+  }
+}
+
+.container {
+  @include container;
 }
 
 .chart {
