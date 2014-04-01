@@ -48,7 +48,7 @@ title: Student Loans
 
     %p 48% of the student body at Northeastern has taken on federal loans, at an average of $7,324 per academic year. This leaves the average Northeastern borrower with about the average national level of $29,400 in loans after graduation.
 
-    %p
+    %p.question
       %strong How does this effect you post graduation?
 
     %form
@@ -65,8 +65,12 @@ title: Student Loans
       %input{ 'type' => 'text', 'placeholder' => '$80,000' }
 
       .success
-        %span With consistent monthly payments of $0000, you'd be able to pay off your loans after 00 years. You'd end up paying $0000 in interest.
+        %span
+          With consistent monthly payments of $0000, you'd be able to pay off your loans after 00 years. You'd end up paying $0000 in interest.
+          %br
+          = link_to 'Change your amounts', '#graph'
 
-.graph-container
-  .y-axis
-  .chart
+.graph-container#graph
+  .graph
+    .y-axis
+    .chart
