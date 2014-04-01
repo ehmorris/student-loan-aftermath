@@ -16,7 +16,7 @@ data = [
 
 graph = new Rickshaw.Graph {
   element: $('.chart')[0]
-  width: 1024
+  width: 984
   height: 400
   series: [{
     color: 'steelblue'

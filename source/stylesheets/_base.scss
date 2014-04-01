@@ -1,19 +1,57 @@
+@mixin container {
+  height: 100vh;
+  margin: auto;
+  overflow-x: hidden;
+  position: relative;
+  width: 1024px;
+}
+
+@mixin pseudo-block-element {
+  content: '';
+  display: block;
+}
+
+@include keyframes(line-point-down) {
+  0% {
+    bottom: 40%;
+    opacity: 0;
+  }
+
+  100% {
+    bottom: 0;
+    opacity: 1;
+  }
+}
+
 body {
   font: 400 1em/1.4 $primary-font;
   margin: 0;
   text-rendering: optimizeLegibility;
 }
 
-@mixin container {
-  position: relative;
-  width: 1024px;
-  margin: 4rem auto;
-}
+.headline {
+  @include container;
+  display: flex;
+  flex-wrap: wrap;
 
-.title {
-  font-size: 3rem;
-  margin: 4rem 0;
-  text-align: center;
+  h1 {
+    align-self: center;
+    display: block;
+    font-family: $secondary-font;
+    font-size: 1.5rem;
+    margin: 0;
+    text-align: center;
+    width: 100%;
+  }
+
+  .line {
+    @include animation(line-point-down 2s $ease-in-out-back both);
+    background: #000;
+    border-radius: 4px;
+    display: block;
+    @include position(absolute, 55% 0 0px 50%);
+    width: 4px;
+  }
 }
 
 .costs {
