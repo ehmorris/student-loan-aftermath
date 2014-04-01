@@ -60,5 +60,4 @@ hoverDetail = new Rickshaw.Graph.HoverDetail {
     Math.floor(y) + ' dollars'
 }
 
-
 graph.render()

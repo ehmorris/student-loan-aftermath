@@ -115,6 +115,8 @@ body {
 }
 
 .debt {
+  overflow: hidden;
+
   .question {
     margin-top: 3rem !important;
   }
@@ -165,7 +167,7 @@ body {
       }
 
       .line {
-        background: #fff;
+        background: green;
         border-radius: 4px;
         display: block;
         margin-top: 5rem;
