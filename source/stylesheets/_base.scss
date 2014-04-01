@@ -42,11 +42,17 @@ body {
     width: 100%;
   }
 
-  h2 {
-    @include _section-header;
+  .hgroup {
+    h2 {
+      @include _section-header;
+    }
+
+    h3 {
+      @include _sub-header;
+    }
   }
 
-  h3, .container > p, .footnotes {
+  .container > p, .footnotes {
     @include _sub-header;
   }
 
@@ -82,7 +88,7 @@ body {
 
     &:first-of-type:before {
       @include _pseudo-block-element;
-      border-top: 4px solid #ccc;
+      border-top: 4px dashed #ccc;
       margin-top: -4px;
       position: absolute;
       width: 100%;
@@ -104,6 +110,50 @@ body {
 
     span {
       font-weight: bold;
+    }
+  }
+}
+
+.debt {
+  form {
+    margin: 3rem 0 0 $flush-left-amount;
+    max-width: 60%;
+    position: relative;
+
+    input {
+      border: 1px solid #ccc;
+      border-radius: 2px;
+      box-shadow: inset 0 .1rem .1rem rgba(0, 0, 0, .2);
+      box-sizing: border-box;
+      display: block;
+      font-family: $primary-font;
+      padding: 1rem;
+      width: 100%;
+    }
+
+    .success {
+      align-items: center;
+      background: rgb(60, 210, 60);
+      border-radius: 4px;
+      display: flex;
+      opacity: 0;
+      padding: 4rem;
+      @include position(absolute, 0px 0px 0px 0px);
+      text-align: center;
+      @include transform(scale(.8));
+      @include transition(1s $ease-in-out-back);
+      z-index: -1;
+
+      &.active {
+        opacity: 1;
+        @include transform(scale(1));
+        z-index: 1;
+      }
+
+      span {
+        color: #fff;
+        font: bold 1.5rem/1.3 $secondary-font;
+      }
     }
   }
 }

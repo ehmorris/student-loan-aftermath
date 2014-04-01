@@ -38,13 +38,34 @@ title: Student Loans
     %p That's $14,642 in tuition increases.
 
     .footnotes
-      %p Room and Board can be as much as $13,000, but varies depending on placement
-      = link_to 'Northeastern tuition data', 'http://www.cappex.com/colleges/Northeastern-University/tuition-and-costs', target: '_blank'
+      %p Room and Board not included, which can be as much as $13,000 per year, but varies depending on placement.
+      = link_to '* Northeastern tuition data', 'http://www.cappex.com/colleges/Northeastern-University/tuition-and-costs', target: '_blank'
 
 .debt
   .container
     .hgroup
       %h2 2. The Debt
+
+    %p 48% of the student body at Northeastern has taken on federal loans, at an average of $7,324 per academic year. This leaves the average Northeastern borrower with about the average national level of $29,400 in loans after graduation.
+
+    %p
+      %strong How does this effect you post graduation?
+
+    %form
+      %p How much do you owe?
+      %input{ 'type' => 'text', 'placeholder' => '$29,400' }
+
+      %p What's your interest rate?
+      %input{ 'type' => 'text', 'placeholder' => 'Federal loan are currently fixed at 3.86%' }
+
+      %p What do you expect to be making post-graduation?
+      %input{ 'type' => 'text', 'placeholder' => '$50,000' }
+
+      %p What do you expect to be making 5 years post-graduation?
+      %input{ 'type' => 'text', 'placeholder' => '$80,000' }
+
+      .success
+        %span With consistent monthly payments of $0000, you'd be able to pay off your loans after 00 years. You'd end up paying $0000 in interest.
 
 .graph-container
   .y-axis

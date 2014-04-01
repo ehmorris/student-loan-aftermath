@@ -4,6 +4,18 @@ $('.years li').each ->
     'height': "#{tuition / 1000}vh"
   }
 
+$('form input').on 'blur', ->
+  all_filled = true
+  $('form input').each ->
+    if !input_filled($(this))
+      all_filled = false
+
+  if all_filled
+    $('form .success').addClass 'active'
+
+input_filled = (input) ->
+  input.val().length > 0
+
 data = [
   { x: 1388534400, y: 102100 }
   { x: 1420070400, y: 93592 }
@@ -22,7 +34,7 @@ data = [
 
 graph = new Rickshaw.Graph {
   element: $('.chart')[0]
-  width: 984
+  width: 800
   height: 400
   series: [{
     color: 'steelblue'
