@@ -5,19 +5,20 @@ body {
 }
 
 .headline {
-  @include container;
+  @include _container;
   display: flex;
   flex-wrap: wrap;
 
   h1 {
+    @include _section-header;
     align-self: center;
-    @include section-header;
 
     span {
-      @include sub-header;
-      text-transform: none;
-      margin-left: 0;
+      @include _sub-header;
       display: block;
+      margin-left: 0;
+      max-width: 100%;
+      text-transform: none;
     }
   }
 
@@ -33,23 +34,23 @@ body {
 }
 
 .costs {
-  @include container;
+  @include _container;
 
   h2 {
-    @include section-header;
+    @include _section-header;
     margin-top: 3rem;
   }
 
-  h3 {
-    @include sub-header;
+  h3, > p {
+    @include _sub-header;
   }
 
   .years {
-    display: flex;
-    @include nil-list;
-    padding: 3rem 0;
-    overflow: hidden;
+    @include _nil-list;
     align-items: flex-end;
+    display: flex;
+    overflow: hidden;
+    padding: 3rem 0;
 
     li {
       align-items: flex-end;
@@ -58,8 +59,17 @@ body {
       display: flex;
       flex: 1 100%;
       flex-wrap: wrap;
-      padding: 1rem;
+      padding: 0 1rem 1rem;
       @include transition;
+
+      &:first-of-type:before {
+        @include _pseudo-block-element;
+        border-top: 4px solid #ccc;
+        margin-top: -4px;
+        position: absolute;
+        width: 100%;
+        z-index: -1;
+      }
 
       &:last-of-type {
         border-right: 0;
@@ -68,6 +78,10 @@ body {
       &:hover {
         @include transform(scale(1.1));
         background: #eee;
+
+        &:before {
+          display: none;
+        }
       }
 
       span {
@@ -77,7 +91,7 @@ body {
   }
 
   .footnotes {
-    @include sub-header;
+    @include _sub-header;
     font-style: italic;
 
     p {
@@ -91,7 +105,7 @@ body {
 }
 
 .container {
-  @include container;
+  @include _container;
 }
 
 .chart {
