@@ -7,96 +7,94 @@
     <title>
       Student Loans
     </title>
+    <link href='//cloud.typography.com/7346032/667224/css/fonts.css' rel='stylesheet' type='text/css'>
     <link href='stylesheets/application.css' rel='stylesheet' type='text/css'>
   </head>
   <body>
-    <h1 class='title'>How will student loans effect you?</h1>
+    <div class='headline'>
+      <h1>
+        How will student loans effect you?
+        <span>An overview for Northeastern students</span>
+      </h1>
+      <div class='line'></div>
+    </div>
     <div class='costs'>
-      <h2>If you go to a typical four year private school, here's how much everything is gonna cost:</h2>
-      <div class='years'>
-        <div class='year'>
-          <span class='title'>
-            Year
-            1
-          </span>
-          <span class='cost'>$50000</span>
-          <div class='segments'>
-            <div class='fees'>
-              <span>Fees</span>
-            </div>
-            <div class='room'>
-              <span>Room &amp; board</span>
-            </div>
-            <div class='tuition'>
-              <span>Tuition</span>
-            </div>
-          </div>
+      <div class='container'>
+        <div class='hgroup'>
+          <h2>1. The Costs</h2>
+          <h3>Over the course of five years, costs go up at almost every school &mdash; here's Northeastern's tuition over the last five years, for each academic year (2 semesters.)</h3>
         </div>
-        <div class='year'>
-          <span class='title'>
-            Year
-            2
-          </span>
-          <span class='cost'>$50700</span>
-          <div class='segments'>
-            <div class='fees'>
-              <span>Fees</span>
-            </div>
-            <div class='room'>
-              <span>Room &amp; board</span>
-            </div>
-            <div class='tuition'>
-              <span>Tuition</span>
-            </div>
-          </div>
-        </div>
-        <div class='year'>
-          <span class='title'>
-            Year
-            3
-          </span>
-          <span class='cost'>$51400</span>
-          <div class='segments'>
-            <div class='fees'>
-              <span>Fees</span>
-            </div>
-            <div class='room'>
-              <span>Room &amp; board</span>
-            </div>
-            <div class='tuition'>
-              <span>Tuition</span>
-            </div>
-          </div>
-        </div>
-        <div class='year'>
-          <span class='title'>
-            Year
-            4
-          </span>
-          <span class='cost'>$52100</span>
-          <div class='segments'>
-            <div class='fees'>
-              <span>Fees</span>
-            </div>
-            <div class='room'>
-              <span>Room &amp; board</span>
-            </div>
-            <div class='tuition'>
-              <span>Tuition</span>
-            </div>
-          </div>
+        <ol class='years'>
+          <li data-amount='35712'>
+            <p>
+              2009&ndash;2010 tuition:
+              <span>$35,712</span>
+            </p>
+          </li>
+          <li data-amount='37142'>
+            <p>
+              2010&ndash;2011 tuition:
+              <span>$37,142</span>
+            </p>
+          </li>
+          <li data-amount='38602'>
+            <p>
+              2011&ndash;2012 tuition:
+              <span>$38,602</span>
+            </p>
+          </li>
+          <li data-amount='40086'>
+            <p>
+              2012&ndash;2013 tuition:
+              <span>$40,086</span>
+            </p>
+          </li>
+          <li data-amount='41660'>
+            <p>
+              2013&ndash;2014 tuition:
+              <span>$41,660</span>
+            </p>
+          </li>
+        </ol>
+        <p>That's $14,642 in tuition increases.</p>
+        <div class='footnotes'>
+          <p>Room and Board not included, which can be as much as $13,000 per year, but varies depending on placement.</p>
+          <a target="_blank" href="http://www.cappex.com/colleges/Northeastern-University/tuition-and-costs">* Northeastern tuition data</a>
         </div>
       </div>
-      <h2>Total: $204200</h2>
-      <h2>Assuming half of this is covered in scholorships, grants, and your parent's money, there's a still $102100 left to pay.</h2>
-      <h2 class='loan-amount'>
-        Let's see how long it would take to pay back $102100
-      </h2>
-      <h2>To pay this back in 10 years, you'll have to make monthly payments of $850</h2>
     </div>
-    <div class='container'>
-      <div class='y-axis'></div>
-      <div class='chart'></div>
+    <div class='debt'>
+      <div class='container'>
+        <div class='hgroup'>
+          <h2>2. The Debt</h2>
+        </div>
+        <p>48% of the student body at Northeastern has taken on federal loans, at an average of $7,324 per academic year. This leaves the average Northeastern borrower with about the average national level of $29,400 in loans after graduation.</p>
+        <p class='question'>
+          <strong>How does this effect you post graduation?</strong>
+        </p>
+        <form>
+          <p>How much do you owe?</p>
+          <input placeholder='$29,400' type='text'>
+          <p>What's your interest rate?</p>
+          <input placeholder='Federal loan are currently fixed at 3.86%' type='text'>
+          <p>What do you expect to be making post-graduation?</p>
+          <input placeholder='$50,000' type='text'>
+          <p>What do you expect to be making 5 years post-graduation?</p>
+          <input placeholder='$80,000' type='text'>
+          <div class='success'>
+            <span>
+              With consistent monthly payments of $0000, you'd be able to pay off your loans after 00 years. You'd end up paying $0000 in interest.
+            </span>
+            <div class='line'></div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class='graph-container' id='graph'>
+      <div class='graph'>
+        <div class='y-axis'></div>
+        <div class='chart'></div>
+      </div>
     </div>
     <script src='javascripts/application.js' type='text/javascript'></script>
   </body>
