@@ -152,17 +152,25 @@ body {
         opacity: 1;
         @include transform(scale(1));
         z-index: 1;
+
+        .line {
+          @include animation(line-point-down 2s $ease-in-out-back both);
+          @include animation-delay(1s);
+        }
       }
 
       span {
         color: #fff;
         font: bold 1.5rem/1.3 $secondary-font;
+      }
 
-        a {
-          color: #fff;
-          display: block;
-          margin-top: 1.5rem;
-        }
+      .line {
+        background: #fff;
+        border-radius: 4px;
+        display: block;
+        margin-top: 5rem;
+        @include position(absolute, 50% 0 0px 50%);
+        width: 4px;
       }
     }
   }
