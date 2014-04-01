@@ -33,69 +33,24 @@ body {
   }
 }
 
-.costs {
+.costs, .debt {
   @include _container;
   display: flex;
 
-  .costs-container {
+  .container {
     align-self: center;
+    width: 100%;
   }
 
   h2 {
     @include _section-header;
   }
 
-  h3, .costs-container > p {
+  h3, .container > p, .footnotes {
     @include _sub-header;
-  }
-
-  .years {
-    @include _nil-list;
-    align-items: flex-end;
-    display: flex;
-    overflow: hidden;
-    padding: 3rem 0;
-
-    li {
-      align-items: flex-end;
-      border-right: 1px solid #eee;
-      border-top: 4px solid #000;
-      display: flex;
-      flex: 1 100%;
-      flex-wrap: wrap;
-      padding: 0 1rem 1rem;
-      @include transition;
-
-      &:first-of-type:before {
-        @include _pseudo-block-element;
-        border-top: 4px solid #ccc;
-        margin-top: -4px;
-        position: absolute;
-        width: 100%;
-        z-index: -1;
-      }
-
-      &:last-of-type {
-        border-right: 0;
-      }
-
-      &:hover {
-        @include transform(scale(1.1));
-        background: #eee;
-
-        &:before {
-          display: none;
-        }
-      }
-
-      span {
-        font-weight: bold;
-      }
-    }
   }
 
   .footnotes {
-    @include _sub-header;
     font-style: italic;
 
     p {
@@ -108,7 +63,52 @@ body {
   }
 }
 
-.container {
+.years {
+  @include _nil-list;
+  align-items: flex-end;
+  display: flex;
+  overflow: hidden;
+  padding: 3rem 0;
+
+  li {
+    align-items: flex-end;
+    border-right: 1px solid #eee;
+    border-top: 4px solid #000;
+    display: flex;
+    flex: 1 100%;
+    flex-wrap: wrap;
+    padding: 0 1rem 1rem;
+    @include transition;
+
+    &:first-of-type:before {
+      @include _pseudo-block-element;
+      border-top: 4px solid #ccc;
+      margin-top: -4px;
+      position: absolute;
+      width: 100%;
+      z-index: -1;
+    }
+
+    &:last-of-type {
+      border-right: 0;
+    }
+
+    &:hover {
+      @include transform(scale(1.1));
+      background: #eee;
+
+      &:before {
+        display: none;
+      }
+    }
+
+    span {
+      font-weight: bold;
+    }
+  }
+}
+
+.graph-container {
   @include _container;
 }
 
