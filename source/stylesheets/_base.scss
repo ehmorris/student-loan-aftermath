@@ -35,13 +35,17 @@ body {
 
 .costs {
   @include _container;
+  display: flex;
+
+  .costs-container {
+    align-self: center;
+  }
 
   h2 {
     @include _section-header;
-    margin-top: 3rem;
   }
 
-  h3, > p {
+  h3, .costs-container > p {
     @include _sub-header;
   }
 
