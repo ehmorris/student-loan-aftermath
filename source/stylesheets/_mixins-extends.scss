@@ -1,7 +1,7 @@
 @mixin _container {
   height: 100vh;
   margin: auto;
-  overflow-x: hidden;
+  overflow: hidden;
   position: relative;
   width: 100%;
 }
