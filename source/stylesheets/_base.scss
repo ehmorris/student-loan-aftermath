@@ -47,8 +47,8 @@ body {
   .years {
     display: flex;
     @include nil-list;
-    margin-top: 3rem;
-    overflow: auto;
+    padding: 3rem 0;
+    overflow: hidden;
     align-items: flex-end;
 
     li {
@@ -59,9 +59,15 @@ body {
       flex: 1 100%;
       flex-wrap: wrap;
       padding: 1rem;
+      @include transition;
 
       &:last-of-type {
         border-right: 0;
+      }
+
+      &:hover {
+        @include transform(scale(1.1));
+        background: #eee;
       }
 
       span {
@@ -72,7 +78,6 @@ body {
 
   .footnotes {
     @include sub-header;
-    margin-top: 3rem;
     font-style: italic;
 
     p {

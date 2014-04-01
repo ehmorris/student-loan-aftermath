@@ -30,6 +30,7 @@
 @mixin sub-header {
   font: 100 1rem/1.3 $primary-font;
   margin: .5rem 0 0 $flush-left-amount;
+  max-width: 60%;
 }
 
 @include keyframes(line-point-down) {
