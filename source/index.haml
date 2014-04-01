@@ -3,28 +3,42 @@ title: Student Loans
 ---
 
 .headline
-  %h1 How will student loans effect you?
+  %h1
+    How will student loans effect you?
+    %span An overview for Northeastern students
   .line
 
 .costs
-  %h2 1. The Costs
-  .years
-    - 4.times do |year|
-      .year
-        %span.title
-          Year
-          = year+1
-        %span.cost<
-          $
-          = 50000 + (year * 700)
-        .segments
-          .fees
-            %span Fees          
-          .room
-            %span Room &amp; board
-          .tuition
-            %span Tuition
-        
+  .hgroup
+    %h2 1. The Costs
+    %h3 Over the course of five years, costs go up at almost every school &mdash; here's Northeastern
+  %ol.years
+    %li{ 'data-amount' => '35712' }
+      %p
+        2009&ndash;2010 tuition:
+        %span $35,712
+    %li{ 'data-amount' => '37142' }
+      %p
+        2010&ndash;2011 tuition:
+        %span $37,142
+    %li{ 'data-amount' => '38602' }
+      %p
+        2011&ndash;2012 tuition:
+        %span $38,602
+    %li{ 'data-amount' => '40086' }
+      %p
+        2012&ndash;2013 tuition:
+        %span $40,086
+    %li{ 'data-amount' => '41660' }
+      %p
+        2013&ndash;2014 tuition:
+        %span $41,660
+
+  .footnotes
+    %p Room and Board can be as much as $13,000, but varies depending on placement
+    = link_to 'Northeastern tuition data', 'http://www.cappex.com/colleges/Northeastern-University/tuition-and-costs', target: '_blank'
+
+
 .container
   .y-axis
   .chart

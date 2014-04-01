@@ -11,7 +11,14 @@ body {
 
   h1 {
     align-self: center;
-    @extend %section-header;
+    @include section-header;
+
+    span {
+      @include sub-header;
+      text-transform: none;
+      margin-left: 0;
+      display: block;
+    }
   }
 
   .line {
@@ -19,7 +26,7 @@ body {
     background: #000;
     border-radius: 4px;
     display: block;
-    margin-top: $header-spacing-base;
+    margin-top: 3rem;
     @include position(absolute, 50% 0 0px 50%);
     width: 4px;
   }
@@ -29,77 +36,51 @@ body {
   @include container;
 
   h2 {
-    @extend %section-header;
+    @include section-header;
+    margin-top: 3rem;
+  }
+
+  h3 {
+    @include sub-header;
   }
 
   .years {
+    display: flex;
+    @include nil-list;
+    margin-top: 3rem;
     overflow: auto;
-  }
+    align-items: flex-end;
 
-  .year {
-    background: rgba(0, 255, 0, .2);
-    border: .25rem solid green;
-    border-radius: .5rem;
-    box-sizing: border-box;
-    cursor: default;
-    float: left;
-    height: 250px;
-    margin: 0 2.5%;
-    padding: 2rem 1rem 1rem 1rem;
-    position: relative;
-    @include user-select(none);
-    width: 20%;
+    li {
+      align-items: flex-end;
+      border-right: 1px solid #eee;
+      border-top: 4px solid #000;
+      display: flex;
+      flex: 1 100%;
+      flex-wrap: wrap;
+      padding: 1rem;
 
-    .title, .cost {
-      display: block;
-      font-size: 1.5rem;
-      font-weight: bold;
-      margin: 1rem 0;
-      text-align: center;
-
-      &:first-child {
-        font-weight: normal;
-      }
-    }
-
-    .segments {
-      div {
-        background: transparent;
-        border-bottom: 1px dashed green;
-        @include position(absolute, 0px 0px 0 0px);
-        @include transition;
-
-        &:hover {
-          background: green;
-
-          span {
-            opacity: 1;
-          }
-        }
-      }
-
-      .fees {
-        height: 10%;
-      }
-
-      .room {
-        height: 35%;
-        top: 10%;
-      }
-
-      .tuition {
-        height: 55%;
-        top: 45%;
+      &:last-of-type {
+        border-right: 0;
       }
 
       span {
-        color: white;
         font-weight: bold;
-        opacity: 0;
-        @include position(absolute, 10% 10% 0 10%);
-        text-align: center;
-        @include transition;
       }
+    }
+  }
+
+  .footnotes {
+    @include sub-header;
+    margin-top: 3rem;
+    font-style: italic;
+
+    p {
+      margin: 0 0 .5rem;
+    }
+
+    a {
+      text-decoration: none;
     }
   }
 }

@@ -1,3 +1,9 @@
+$('.years li').each ->
+  tuition = $(this).data 'amount'
+  $(this).css {
+    'height': "#{tuition / 1000}vh"
+  }
+
 data = [
   { x: 1388534400, y: 102100 }
   { x: 1420070400, y: 93592 }
