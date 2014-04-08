@@ -17,3 +17,37 @@
     @include transform(scale(1));
   }
 }
+
+@include keyframes(subtract-money) {
+  0% {
+    border-color: black;
+    color: black;
+    @include transform(scale(1));
+  }
+
+  50% {
+    border-color: red;
+    color: red;
+    @include transform(scale(.9));
+  }
+
+  100% {
+    border-color: black;
+    color: black;
+    @include transform(scale(1));
+  }
+}
+
+@include keyframes(pulse) {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}

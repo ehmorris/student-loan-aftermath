@@ -1,14 +1,14 @@
 window.add_to_bank = (amount) ->
   increment_money_display('.bank h1', amount)
-  animate_money_container('.bank h1')
+  animate_money_container_add('.bank h1')
 
 window.add_to_cost = (amount) ->
   increment_money_display('.cost h1', amount)
-  animate_money_container('.cost h1')
+  animate_money_container_add('.cost h1')
 
 window.subtract_from_bank = (amount) ->
   decrement_money_display('.bank h1', amount)
-  animate_money_container('.bank h1')
+  animate_money_container_subtract('.bank h1')
 
 increment_money_display = (money_tag, amount, increment_count = 1, number_of_increments = 10) ->
   current_value = parseInt $(money_tag).text()
@@ -26,10 +26,15 @@ increment_money_display = (money_tag, amount, increment_count = 1, number_of_inc
 decrement_money_display = (money_tag, amount) ->
   increment_money_display(money_tag, "-#{amount}")
 
-animate_money_container = (container) ->
+animate_money_container_add = (container) ->
   $(container).addClass('add')
   $(container).bind 'animationend webkitAnimationEnd MSAnimationEnd oAnimationEnd', ->
     $(this).removeClass('add')
+
+animate_money_container_subtract = (container) ->
+  $(container).addClass('subtract')
+  $(container).bind 'animationend webkitAnimationEnd MSAnimationEnd oAnimationEnd', ->
+    $(this).removeClass('subtract')
 
 round_to_two_decimals = (num) ->
   Math.round(num * 100) / 100

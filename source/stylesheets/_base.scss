@@ -5,8 +5,11 @@ body {
 }
 
 .party {
-  background: url('../images/laurene-boglio.gif') no-repeat center center;
+  align-items: flex-end;
+  background: url('../images/laurene-boglio.gif') no-repeat center;
   background-size: 40vw;
+  display: flex;
+  flex-wrap: wrap;
   opacity: 0;
   @include position(fixed, 0px 0px 0px 0px);
   @include transition;
@@ -14,6 +17,14 @@ body {
 
   &.show {
     opacity: 1;
+  }
+
+  h1 {
+    @include animation(pulse .5s $ease-in-out-back infinite);
+    letter-spacing: .1em;
+    margin: 0 auto;
+    padding-bottom: 5vh;
+    text-transform: uppercase;
   }
 }
 
@@ -61,12 +72,16 @@ body {
     &.add {
       @include animation(add-money .25s $ease-out-back);
     }
+
+    &.subtract {
+      @include animation(subtract-money .25s $ease-out-back);
+    }
   }
 
   h2 {
     font-size: 1rem;
     font-weight: 400;
-    letter-spacing: .1rem;
+    letter-spacing: .1em;
     margin: 1rem 0 0;
     text-transform: uppercase;
   }
