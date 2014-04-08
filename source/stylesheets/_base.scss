@@ -19,11 +19,16 @@ body {
     left: 50%;
   }
 
+  .money {
+    margin: auto;
+    text-align: center;
+  }
+
   h1 {
     border: .4rem solid #000;
     display: inline-block;
     font-size: 2rem;
-    margin: 0 auto;
+    margin: 0;
     padding: 1rem;
     @include transition();
     @include user-select(none);
@@ -35,5 +40,14 @@ body {
     &.add {
       @include animation(add-money .25s $ease-out-back);
     }
+  }
+
+  h2 {
+    font-family: $secondary-font;
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: .1rem;
+    margin: 1rem 0 0;
+    text-transform: uppercase;
   }
 }
