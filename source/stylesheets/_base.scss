@@ -8,6 +8,13 @@ body {
   align-items: center;
   display: flex;
   @include position(fixed, 0px 0 0px 0);
+  @include transition;
+  @include user-select(none);
+  z-index: -1;
+
+  &.hide {
+    opacity: 0;
+  }
 
   &.bank {
     right: 50%;
@@ -27,11 +34,11 @@ body {
   h1 {
     border: .4rem solid #000;
     display: inline-block;
+    font-family: $secondary-font;
     font-size: 2rem;
     margin: 0;
     padding: 1rem;
     @include transition();
-    @include user-select(none);
 
     &:before {
       content: '$';
@@ -43,11 +50,24 @@ body {
   }
 
   h2 {
-    font-family: $secondary-font;
     font-size: 1rem;
     font-weight: 400;
     letter-spacing: .1rem;
     margin: 1rem 0 0;
     text-transform: uppercase;
+  }
+}
+
+article {
+  min-height: 100vh;
+
+  &.title-card {
+    align-items: center;
+    display: flex;
+  }
+
+  h1 {
+    font-size: 8vh;
+    margin: 0 auto;
   }
 }
