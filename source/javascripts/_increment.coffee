@@ -6,14 +6,23 @@ window.add_to_cost = (amount) ->
   increment_money_display('.cost h1', amount)
   animate_money_container('.cost h1')
 
-increment_money_display = (money_tag, amount) ->
+increment_money_display = (money_tag, amount, increment_count = 1, number_of_increments = 10) ->
   current_value = parseInt $(money_tag).text()
   if isNaN current_value
-    $(money_tag).text(0 + amount)
-  else
-    $(money_tag).text(current_value + amount)
+    current_value = 0
+  new_value = round_to_two_decimals(current_value + amount / number_of_increments)
+
+  $(money_tag).text(new_value)
+
+  if increment_count < number_of_increments
+    window.setTimeout ->
+      increment_money_display(money_tag, amount, increment_count + 1)
+    , 75
 
 animate_money_container = (container) ->
   $(container).addClass('add')
   $(container).bind 'animationend webkitAnimationEnd MSAnimationEnd oAnimationEnd', ->
     $(this).removeClass('add')
+
+round_to_two_decimals = (num) ->
+  Math.round(num * 100) / 100
