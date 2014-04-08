@@ -6,6 +6,10 @@ window.add_to_cost = (amount) ->
   increment_money_display('.cost h1', amount)
   animate_money_container('.cost h1')
 
+window.subtract_from_bank = (amount) ->
+  decrement_money_display('.bank h1', amount)
+  animate_money_container('.bank h1')
+
 increment_money_display = (money_tag, amount, increment_count = 1, number_of_increments = 10) ->
   current_value = parseInt $(money_tag).text()
   if isNaN current_value
@@ -18,6 +22,9 @@ increment_money_display = (money_tag, amount, increment_count = 1, number_of_inc
     window.setTimeout ->
       increment_money_display(money_tag, amount, increment_count + 1)
     , 75
+
+decrement_money_display = (money_tag, amount) ->
+  increment_money_display(money_tag, "-#{amount}")
 
 animate_money_container = (container) ->
   $(container).addClass('add')
