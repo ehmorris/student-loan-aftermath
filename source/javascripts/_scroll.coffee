@@ -15,6 +15,6 @@ add_to_cost = ->
 
 animate_money_container = (container) ->
   $(container).addClass('add')
-  $(container).get(0).addEventListener 'webkitAnimationEnd', ->
-    $(container).removeClass('add')
+  $(container).bind 'animationend webkitAnimationEnd MSAnimationEnd oAnimationEnd', ->
+    $(this).removeClass('add')
 
