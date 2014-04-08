@@ -60,8 +60,12 @@ body {
 }
 
 article {
+  box-sizing: border-box;
   min-height: 100vh;
   overflow: auto;
+  padding: 0 2rem;
+  position: relative;
+  width: 50%;
 
   &.center {
     align-items: center;
@@ -69,9 +73,12 @@ article {
     flex-wrap: wrap;
   }
 
-  &.costs-summary {
-    padding: 0 2rem;
-    width: 50%;
+  &.right {
+    left: 50%;
+  }
+
+  &.intro {
+    width: 100%;
   }
 
   > div {
