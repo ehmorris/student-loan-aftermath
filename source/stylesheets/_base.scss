@@ -60,14 +60,45 @@ body {
 
 article {
   min-height: 100vh;
+  overflow: auto;
 
-  &.title-card {
+  &.center {
     align-items: center;
     display: flex;
+    flex-wrap: wrap;
+  }
+
+  &.costs-summary {
+    padding: 0 2rem;
+    width: 50%;
+  }
+
+  > div {
+    width: 100%;
   }
 
   h1 {
-    font-size: 8vh;
+    font-size: 6vh;
     margin: 0 auto;
+  }
+
+  h2 {
+    font-size: 1rem;
+    margin: 0 0 2rem;
+  }
+
+  p {
+    font-family: $secondary-font;
+    margin: 0 0 2rem;
+  }
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+
+    td {
+      border: .4rem solid #eee;
+      padding: .75rem;
+    }
   }
 }
