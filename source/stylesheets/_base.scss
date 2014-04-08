@@ -4,4 +4,36 @@ body {
   text-rendering: optimizeLegibility;
 }
 
+.money-container {
+  align-items: center;
+  display: flex;
+  @include position(fixed, 0px 0 0px 0);
 
+  &.bank {
+    right: 50%;
+    left: 0;
+  }
+
+  &.cost {
+    right: 0;
+    left: 50%;
+  }
+
+  h1 {
+    border: .4rem solid #000;
+    display: inline-block;
+    font-size: 2rem;
+    margin: 0 auto;
+    padding: 1rem;
+    @include transition();
+    @include user-select(none);
+
+    &:before {
+      content: '$';
+    }
+
+    &.add {
+      @include animation(add-money .25s $ease-out-back);
+    }
+  }
+}

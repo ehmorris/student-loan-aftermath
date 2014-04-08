@@ -1,0 +1,19 @@
+@include keyframes(add-money) {
+  0% {
+    border-color: black;
+    color: black;
+    @include transform(scale(1));
+  }
+
+  50% {
+    border-color: green;
+    color: green;
+    @include transform(scale(.9));
+  }
+
+  100% {
+    border-color: black;
+    color: black;
+    @include transform(scale(1));
+  }
+}
