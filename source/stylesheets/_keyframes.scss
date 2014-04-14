@@ -1,53 +1,42 @@
+@mixin normal-state {
+  background: white;
+  border-color: black;
+  color: black;
+  @include transform(scale(1));
+}
+
 @include keyframes(add-money) {
-  0% {
-    border-color: black;
-    color: black;
-    @include transform(scale(1));
+  0%, 100% {
+    @include normal-state;
   }
 
   50% {
+    background: green;
     border-color: green;
-    color: green;
-    @include transform(scale(.9));
-  }
-
-  100% {
-    border-color: black;
-    color: black;
-    @include transform(scale(1));
+    color: white;
+    @include transform(scale(.85));
   }
 }
 
 @include keyframes(subtract-money) {
-  0% {
-    border-color: black;
-    color: black;
-    @include transform(scale(1));
+  0%, 100% {
+    @include normal-state;
   }
 
   50% {
+    background: red;
     border-color: red;
-    color: red;
-    @include transform(scale(.9));
-  }
-
-  100% {
-    border-color: black;
-    color: black;
-    @include transform(scale(1));
+    color: white;
+    @include transform(scale(.85));
   }
 }
 
 @include keyframes(pulse) {
-  0% {
+  0%, 100% {
     opacity: 1;
   }
 
   50% {
     opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
   }
 }
