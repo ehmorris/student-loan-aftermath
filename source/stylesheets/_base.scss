@@ -17,6 +17,16 @@ body {
     @include transform(scale(.1));
   }
 
+  &.center {
+    left: 0px;
+    right: 0px;
+  }
+
+  &.right {
+    left: 50%;
+    right: 0px;
+  }
+
   .money {
     margin: auto;
     text-align: center;

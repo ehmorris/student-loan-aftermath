@@ -1,9 +1,9 @@
 $('.blank:eq(0)').waypoint ->
-  $('.bank, .cost').toggleClass 'hide'
+  $('.cost').toggleClass 'hide'
 , { offset: '50%' }
 
 $('.costs-summary:eq(0)').waypoint ->
-  $('.bank').toggleClass 'hide'
+  $('.cost').toggleClass('center').toggleClass 'right'
 , { offset: '50%' }
 
 $('.costs-summary').waypoint ->
