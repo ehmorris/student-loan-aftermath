@@ -4,30 +4,6 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-.party {
-  align-items: flex-end;
-  background: url('../images/laurene-boglio.gif') no-repeat center;
-  background-size: 40vw;
-  display: flex;
-  flex-wrap: wrap;
-  opacity: 0;
-  @include position(fixed, 0px 0px 0px 0px);
-  @include transition;
-  z-index: -1;
-
-  &.show {
-    opacity: 1;
-  }
-
-  h1 {
-    @include animation(pulse .5s $ease-in-out-back infinite);
-    letter-spacing: .1em;
-    margin: 0 auto;
-    padding-bottom: 5vh;
-    text-transform: uppercase;
-  }
-}
-
 .money-container {
   align-items: center;
   display: flex;
@@ -63,18 +39,18 @@ body {
     font-size: 2rem;
     margin: 0;
     padding: 1rem;
-    @include transition();
+    @include transition(.5s);
 
     &:before {
       content: '$';
     }
 
     &.add {
-      @include animation(add-money .25s $ease-out-back);
+      @include animation(add-money .5s $ease-out-back);
     }
 
     &.subtract {
-      @include animation(subtract-money .25s $ease-out-back);
+      @include animation(subtract-money .5s $ease-out-back);
     }
   }
 
@@ -95,6 +71,12 @@ article {
   position: relative;
   width: 50%;
 
+  &.intro {
+    background: #000;
+    color: #fff;
+    width: 100%;
+  }
+
   &.center {
     align-items: center;
     display: flex;
@@ -105,8 +87,8 @@ article {
     left: 50%;
   }
 
-  &.intro {
-    width: 100%;
+  &.subtract {
+    min-height: 30vh;
   }
 
   > div {
@@ -142,5 +124,29 @@ article {
       border: .4rem solid #eee;
       padding: .75rem;
     }
+  }
+}
+
+.party {
+  align-items: flex-end;
+  background: url('../images/laurene-boglio.gif') no-repeat center;
+  background-size: 40vw;
+  display: flex;
+  flex-wrap: wrap;
+  opacity: 0;
+  @include position(fixed, 0px 0px 0px 0px);
+  @include transition(.5s);
+  z-index: -2;
+
+  &.show {
+    opacity: 1;
+  }
+
+  h1 {
+    @include animation(pulse .5s $ease-in-out-back infinite);
+    letter-spacing: .1em;
+    margin: 0 auto;
+    padding-bottom: 5vh;
+    text-transform: uppercase;
   }
 }
