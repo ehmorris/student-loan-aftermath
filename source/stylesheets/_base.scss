@@ -33,10 +33,10 @@ body {
   }
 
   h1 {
-    border: .4rem solid #000;
+    border: .15em solid #000;
     display: inline-block;
     font-family: $secondary-font;
-    font-size: 2rem;
+    font-size: 6vh;
     margin: 0;
     padding: 1rem;
     @include transition(.5s);
