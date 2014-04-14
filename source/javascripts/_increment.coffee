@@ -28,7 +28,7 @@ increment_money_display = (money_tag, amount, increment_count = 1, number_of_inc
       increment_money_display(money_tag, amount, increment_count + 1, number_of_increments, original_value)
     , 20
   else
-    $(money_tag).text(original_value + amount)
+    $(money_tag).text(original_value + parseInt(amount))
     $(document).dequeue()
 
 decrement_money_display = (money_tag, amount) ->
