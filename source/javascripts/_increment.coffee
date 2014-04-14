@@ -1,17 +1,12 @@
-window.add_to_bank = (amount) ->
-  $(document).queue ->
-    increment_money_display('.bank h1', amount)
-    animate_money_container('.bank h1', 'add')
-
 window.add_to_cost = (amount) ->
   $(document).queue ->
     increment_money_display('.cost h1', amount)
     animate_money_container('.cost h1', 'add')
 
-window.subtract_from_bank = (amount) ->
+window.subtract_from_cost = (amount) ->
   $(document).queue ->
-    decrement_money_display('.bank h1', amount)
-    animate_money_container('.bank h1', 'subtract')
+    decrement_money_display('.cost h1', amount)
+    animate_money_container('.cost h1', 'subtract')
 
 increment_money_display = (money_tag, amount, increment_count = 1, number_of_increments = 25, original_value = NaN) ->
   current_value = parseInt($(money_tag).text())

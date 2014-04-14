@@ -7,7 +7,7 @@ body {
 .money-container {
   align-items: center;
   display: flex;
-  @include position(fixed, 0px 0 0px 0);
+  @include position(fixed, 0px 0px 0px 50%);
   @include transition;
   @include user-select(none);
   z-index: -1;
@@ -15,16 +15,6 @@ body {
   &.hide {
     opacity: 0;
     @include transform(scale(.1));
-  }
-
-  &.bank {
-    right: 50%;
-    left: 0;
-  }
-
-  &.cost {
-    right: 0;
-    left: 50%;
   }
 
   .money {
@@ -71,12 +61,6 @@ article {
   position: relative;
   width: 50%;
 
-  &.intro {
-    background: #000;
-    color: #fff;
-    width: 100%;
-  }
-
   &.center {
     align-items: center;
     display: flex;
@@ -87,19 +71,33 @@ article {
     left: 50%;
   }
 
-  &.subtract {
-    min-height: 30vh;
+  &.intro {
+    align-items: flex-end;
+    background: #000;
+    color: #fff;
+    text-align: center;
+    width: 100%;
+
+    h1 {
+      font-size: 6vh;
+      letter-spacing: .1em;
+      margin: .5em 0;
+      text-transform: uppercase;
+    }
+
+    p {
+      font-size: 3vh;
+      margin: auto;
+      max-width: 75%;
+    }
+
+    .hint {
+      color: #666;
+    }
   }
 
   > div {
     width: 100%;
-  }
-
-  h1 {
-    font-size: 6vh;
-    letter-spacing: .1em;
-    margin: 0 auto;
-    text-transform: uppercase;
   }
 
   h2 {
@@ -124,29 +122,5 @@ article {
       border: .4rem solid #eee;
       padding: .75rem;
     }
-  }
-}
-
-.party {
-  align-items: flex-end;
-  background: url('../images/laurene-boglio.gif') no-repeat center;
-  background-size: 40vw;
-  display: flex;
-  flex-wrap: wrap;
-  opacity: 0;
-  @include position(fixed, 0px 0px 0px 0px);
-  @include transition(.5s);
-  z-index: -2;
-
-  &.show {
-    opacity: 1;
-  }
-
-  h1 {
-    @include animation(pulse .5s $ease-in-out-back infinite);
-    letter-spacing: .1em;
-    margin: 0 auto;
-    padding-bottom: 5vh;
-    text-transform: uppercase;
   }
 }
