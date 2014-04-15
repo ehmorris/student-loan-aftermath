@@ -1,6 +1,7 @@
 $ ->
   $('body').panelSnap {
     panelSelector: 'article'
+    slideSpeed: 400
     directionThreshold: 50
     keyboardNavigation: {
       enabled: true

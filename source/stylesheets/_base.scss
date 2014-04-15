@@ -66,7 +66,7 @@ body {
 article {
   box-sizing: border-box;
   min-height: 100vh;
-  overflow: auto;
+  overflow: visible;
   padding: 0 2rem;
   position: relative;
   @include transition;
@@ -136,33 +136,34 @@ article {
     align-items: flex-end;
     display: flex;
     flex: 1;
+    position: relative;
 
-    &.meal-plan {
-      background-color: #AEA4F4;
+    &.residence-activity-fee {
+      background-color: #FF751F;
+    }
+
+    &.recreation-fee {
+      background-color: #24FFFF;
+    }
+
+    &.student-activity-fee {
+      background-color: #FF1F69;
+    }
+
+    &.student-center-fee {
+      background-color: #69FF24;
+    }
+
+    &.new-student-fee {
+      background-color: #FFF024;
     }
 
     &.health-plan {
       background-color: #A0EEF3;
     }
 
-    &.new-student-fee {
-      background-color: #5A0C37;
-    }
-
-    &.recreation-fee {
-      background-color: #194D28;
-    }
-
-    &.residence-activity-fee {
-      background-color: #0D155E;
-    }
-
-    &.student-center-fee {
-      background-color: #581D50;
-    }
-
-    &.student-activity-fee {
-      background-color: #0D5E59;
+    &.meal-plan {
+      background-color: #AEA4F4;
     }
 
     &.housing {
@@ -171,6 +172,15 @@ article {
 
     &.tuition {
       background-color: #EB5C5C;
+    }
+
+    p {
+      box-sizing: border-box;
+      line-height: 1;
+      margin: 0;
+      padding-left: 1rem;
+      @include position(absolute, 0px 0 0 100%);
+      width: 100%;
     }
 
     .name {
