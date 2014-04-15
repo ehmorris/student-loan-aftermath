@@ -1,0 +1,1 @@
+(function(){var t;$(function(){return $(".line-items").each(function(){return t(this)})}),t=function(t){return $(t).children(".line-item").each(function(){return $(this).css({flex:$(this).data("total")})})}}).call(this);
