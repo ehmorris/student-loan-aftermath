@@ -18,9 +18,7 @@ $ ->
   , { offset: '50%' }
 
   $('.costs-summary').waypoint ->
-    if !isNaN $(@).data('total')
-      window.add_to_cost($(@).data('total'))
-      $(@).data('total', '-')
+    window.add_line_items_to_cost(@)
   , { offset: '10%' }
 
   $('.costs-summary').waypoint ->

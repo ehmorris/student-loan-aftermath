@@ -1,6 +1,7 @@
 body {
   font: 400 1em/1.4 $primary-font;
   margin: 0;
+  overflow: hidden;
   text-rendering: optimizeLegibility;
 }
 
@@ -115,6 +116,11 @@ article {
     width: 100%;
   }
 
+  .text {
+    position: relative;
+    z-index: 2;
+  }
+
   h2 {
     font-size: 1rem;
     margin: 0 0 2rem;
@@ -130,13 +136,30 @@ article {
   display: flex;
   flex-direction: column;
   @include position(absolute, 0px 0px 0px 0px);
-  z-index: -1;
+  z-index: 1;
 
   .line-item {
     align-items: flex-end;
     display: flex;
     flex: 1;
     position: relative;
+    @include transition(all 1.25s $ease-out-back);
+
+    &:hover {
+      @include transform(translateX(5%));
+
+      p {
+        opacity: 1;
+      }
+    }
+
+    &.add-line-item-to-cost {
+      @include animation(add-line-item-to-cost 1.25s $ease-out-back);
+
+      p {
+        opacity: 1;
+      }
+    }
 
     &.residence-activity-fee {
       background-color: #FF751F;
@@ -178,6 +201,7 @@ article {
       box-sizing: border-box;
       line-height: 1;
       margin: 0;
+      opacity: 0;
       padding-left: 1rem;
       @include position(absolute, 0px 0 0 100%);
       width: 100%;

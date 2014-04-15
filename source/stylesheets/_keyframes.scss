@@ -5,6 +5,16 @@
   @include transform(scale(1));
 }
 
+@include keyframes(add-line-item-to-cost) {
+  0%, 100% {
+    @include transform(translateX(0%));
+  }
+
+  50% {
+    @include transform(translateX(5%));
+  }
+}
+
 @include keyframes(add-money) {
   0%, 100% {
     @include normal-state;

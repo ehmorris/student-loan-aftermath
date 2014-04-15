@@ -1,12 +1,19 @@
-window.add_to_cost = (amount) ->
-  $(document).queue ->
-    increment_money_display('.cost h1', amount)
-    animate_money_container('.cost h1', 'add')
+window.add_line_items_to_cost = (article) ->
+  $(article).find('.line-item').each ->
+    add_line_item_to_cost(@)
 
-window.subtract_from_cost = (amount) ->
-  $(document).queue ->
-    decrement_money_display('.cost h1', amount)
-    animate_money_container('.cost h1', 'subtract')
+add_line_item_to_cost = (line_item) ->
+  if !isNaN $(line_item).data('total')
+    $(line_item).parent().queue ->
+      add_to_cost($(line_item).data('total'))
+      $(line_item).addClass('add-line-item-to-cost').data('total', NaN)
+      $(line_item).bind 'animationend webkitAnimationEnd MSAnimationEnd oAnimationEnd', ->
+        $(@).removeClass('add-line-item-to-cost')
+        $(@).parent().dequeue()
+
+add_to_cost = (amount) ->
+  increment_money_display('.cost h1', amount)
+  animate_money_container('.cost h1', 'add')
 
 increment_money_display = (money_tag, amount, increment_count = 1, number_of_increments = 25, original_value = NaN) ->
   current_value = parseInt($(money_tag).text())
@@ -29,7 +36,6 @@ increment_money_display = (money_tag, amount, increment_count = 1, number_of_inc
     # since the end value is usually not divisible by the number of increments,
     # the end of the animation displays an incorrect value
     $(money_tag).text(original_value + parseInt(amount))
-    $(document).dequeue()
 
 decrement_money_display = (money_tag, amount) ->
   increment_money_display(money_tag, "-#{amount}")
