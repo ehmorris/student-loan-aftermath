@@ -1,7 +1,6 @@
 body {
   font: 400 1em/1.4 $primary-font;
   margin: 0;
-  overflow: hidden;
   text-rendering: optimizeLegibility;
 }
 
@@ -89,7 +88,6 @@ article {
   }
 
   &.intro {
-    align-items: flex-end;
     background: #000;
     color: #fff;
     text-align: center;

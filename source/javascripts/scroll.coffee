@@ -1,12 +1,6 @@
 $ ->
   $('body').panelSnap {
     panelSelector: 'article'
-    slideSpeed: 400
-    directionThreshold: 50
-    keyboardNavigation: {
-      enabled: true
-      wrapAround: false
-    }
   }
 
   $('.blank:eq(0)').waypoint ->
